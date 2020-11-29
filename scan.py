@@ -9,9 +9,11 @@ import nfc
 import datetime
 import json
 import collections as cl
+
 import pyaudio
 import wave
 
+from playsound import playsound
 
 CACHE = "EnterID.dat"
 
@@ -73,7 +75,8 @@ def connected(tag):
         print(scantime,check,scanID)
         logRecord(scantime,check,scanID)
         #ここで音声鳴らす
-        res_audio("se_maoudamashii_chime13.wav")
+        #res_audio("se_maoudamashii_chime13.wav")
+        playsound("se_maoudamashii_chime13.wav")
         if(check):
             #入室
             print("Enter")
