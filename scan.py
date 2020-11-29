@@ -73,7 +73,7 @@ def connected(tag):
         print(scantime,check,scanID)
         logRecord(scantime,check,scanID)
         #ここで音声鳴らす
-        res_audio()
+        res_audio("se_maoudamashii_chime13.wav")
         if(check):
             #入室
             print("Enter")
