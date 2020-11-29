@@ -9,6 +9,9 @@ import nfc
 import datetime
 import json
 import collections as cl
+import pyaudio
+import wave
+
 
 CACHE = "EnterID.dat"
 
@@ -40,6 +43,23 @@ def checkRecord(scanID):
     return checkEntered
 
 
+def res_audio(audio_file):
+    CHUNK = 44100
+    audio = pyaudio.PyAudio()
+    wf = wave.open(audio_file, 'rb')
+    stream = audio.open(format=audio.get_format_from_width(wf.getsampwidth()),
+                        channels=wf.getnchannels(),
+                        rate=wf.getframerate(),
+                        output=True)
+    data = wf.readframes(CHUNK)
+
+    while data != b'':
+        stream.write(data)
+        data = wf.readframes(CHUNK)
+    stream.close()
+    audio.terminate()
+
+
 def connected(tag):
   if isinstance(tag, nfc.tag.tt3.Type3Tag):
     try:
@@ -53,6 +73,7 @@ def connected(tag):
         print(scantime,check,scanID)
         logRecord(scantime,check,scanID)
         #ここで音声鳴らす
+        res_audio()
         if(check):
             #入室
             print("Enter")
