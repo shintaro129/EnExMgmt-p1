@@ -2,6 +2,7 @@
 # -*- coding: utf-8 -*-
 import os
 import sys
+import time
 sys.path.insert(1, os.path.split(sys.path[0])[0])
 import binascii
 import nfc
@@ -9,10 +10,10 @@ import datetime
 import json
 import collections as cl
 
-CACHE = "/home/test/EnterID.dat"
+CACHE = "EnterID.dat"
 
 def logRecord(scantime,check,scanID):
-    LOGFILE = "/home/test/log/log"+scantime[:10]+".dat"
+    LOGFILE = scantime[:10]+".dat"
     wlog = open(LOGFILE,"a")
     log = scantime+","+str(check)+","+scanID+"\n"
     wlog.write(log)
@@ -67,4 +68,6 @@ def connected(tag):
 
 if __name__ == "__main__":
     clf = nfc.ContactlessFrontend('usb:054c:06c3')
-    clf.connect(rdwr={'on-connect': connected})
+    while True
+        clf.connect(rdwr={'on-connect': connected})
+        time.sleep(3)
