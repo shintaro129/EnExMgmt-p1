@@ -19,10 +19,6 @@
 4.1~3までの工程が成功した際に、成功音を鳴らす
 
 
-## 音楽
-魔王魂
-
-
 ## 実行動画(OECUでのみ閲覧可能)
 https://drive.google.com/file/d/1lemHznOnEuZNssjBcwkmA8mJDhuieYN_/view?usp=sharing
 
@@ -38,3 +34,7 @@ https://drive.google.com/file/d/1lemHznOnEuZNssjBcwkmA8mJDhuieYN_/view?usp=shari
 [nfcpy で複数の System Code を持つ NFC タグを扱う方法](https://uchan.hateblo.jp/entry/2016/11/18/190237)
 
 [FeliCa から情報を吸い出してみる - FeliCaの仕様編](https://qiita.com/YasuakiNakazawa/items/3109df682af2a7032f8d)
+
+
+## 音楽
+[魔王魂](https://maoudamashii.jokersounds.com/)
