@@ -29,12 +29,12 @@ https://drive.google.com/file/d/1lemHznOnEuZNssjBcwkmA8mJDhuieYN_/view?usp=shari
 
 ## 参考にさせていただいたサイト
 ### 学籍番号の読み取り
-https://tomosoft.jp/design/?p=8288
+[Raspberry Pi 3にPaSoRiを接続してSuicaカードをダンプする](https://tomosoft.jp/design/?p=8288)
 
-https://aizu-vr.hatenablog.com/entry/2019/08/02/nfcpy%E3%82%92%E4%BD%BF%E3%81%A3%E3%81%A6%E5%AD%A6%E7%94%9F%E8%A8%BC%E3%81%8B%E3%82%89%E5%AD%A6%E7%B1%8D%E7%95%AA%E5%8F%B7%E3%82%92%E8%AA%AD%E3%81%BF%E5%8F%96%E3%82%8B  
+[nfcpyを使って学生証から学籍番号を読み取る](https://aizu-vr.hatenablog.com/entry/2019/08/02/nfcpy%E3%82%92%E4%BD%BF%E3%81%A3%E3%81%A6%E5%AD%A6%E7%94%9F%E8%A8%BC%E3%81%8B%E3%82%89%E5%AD%A6%E7%B1%8D%E7%95%AA%E5%8F%B7%E3%82%92%E8%AA%AD%E3%81%BF%E5%8F%96%E3%82%8B)
 
-https://nfcpy.readthedocs.io/en/stable-0.11/modules/tag.html#module-nfc.tag.tt3
+[nfc公式ドキュメント:Type 3 tag](https://nfcpy.readthedocs.io/en/stable-0.11/modules/tag.html#module-nfc.tag.tt3)
 
-https://uchan.hateblo.jp/entry/2016/11/18/190237
+[nfcpy で複数の System Code を持つ NFC タグを扱う方法](https://uchan.hateblo.jp/entry/2016/11/18/190237)
 
-https://qiita.com/YasuakiNakazawa/items/3109df682af2a7032f8d
+[FeliCa から情報を吸い出してみる - FeliCaの仕様編](https://qiita.com/YasuakiNakazawa/items/3109df682af2a7032f8d)
