@@ -77,11 +77,11 @@ def connected(tag):
             #入退室に合わせて、音を鳴らす
             if(check):
                 #入室
-                res_audio("se_maoudamashii_chime13.wav")
+                res_audio("se/se_maoudamashii_chime13.wav")
                 print("Enter")
             else:
                 #退室
-                res_audio("se_maoudamashii_chime13.wav")
+                res_audio("se/se_maoudamashii_chime13.wav")
                 print("Exit")
             print(scantime,check,scanID)
         except Exception as e:
@@ -91,9 +91,9 @@ def connected(tag):
 
 
 if __name__ == "__main__":
-    print("program start")
+    print("---program start---")
     clf = nfc.ContactlessFrontend('usb:054c:06c3')
     while True:
+        print("---Scantable---")
         clf.connect(rdwr={'on-connect': connected})
         time.sleep(3)
-        print("Scantable")
