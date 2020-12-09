@@ -18,7 +18,7 @@ sys.path.insert(1, os.path.split(sys.path[0])[0])
 #その日の入退室者ログ
 def logRecord(scantime,check,scanID):
     #書き込むファイルを指定
-    LOGFILE = scantime[:10]+".dat"
+    LOGFILE = "log/"+scantime[:10]+".dat"
     #file_open
     with open(LOGFILE, "a", encoding="utf-8") as wlog:
         log = scantime+","+str(check)+","+scanID+"\n"
