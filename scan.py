@@ -19,13 +19,14 @@ sys.path.insert(1, os.path.split(sys.path[0])[0])
 def logRecord(scantime,check,scanID):
     #書き込むファイルを指定
     LOGFILE = "log/"+scantime[:10]+".dat"
+
     #file_open
-    with open(LOGFILE, "a", encoding="utf-8") as wlog:
+    with open(LOGFILE, "a", encoding="utf-8") as alog:
         log = scantime+","+str(check)+","+scanID+"\n"
-        wlog.write(log)
+        alog.write(log)
 
 
-#現在の入室者一覧
+#入退室判定
 def checkRecord(scanID):
     CACHE = "EnterID.dat"
     checkEntered = bool()
@@ -51,21 +52,21 @@ def res_audio(audio_file):
     playsound(audio_file)
 
 
-#
+#カード通信時の処理
 def connected(tag):
     if isinstance(tag, nfc.tag.tt3.Type3Tag):
         try:
             #学籍番号が格納されている場所を指定
             service_code = 0x09CB
             
-            #打刻時間を取得
-            scantime = "".join(list(map(str,str(datetime.datetime.now())))[:19])
-            
             #service_codeの場所から学籍番号のみを抽出。
             sc = nfc.tag.tt3.ServiceCode(service_code >> 6 ,service_code & 0x3f)
             bc = nfc.tag.tt3.BlockCode(0,service=0)
             data = tag.read_without_encryption([sc],[bc])
             scanID = data[2:10].decode("utf-8")
+
+            #打刻時間を取得
+            scantime = "".join(list(map(str,str(datetime.datetime.now())))[:19])
 
             #入室か退室かの判定
             check = checkRecord(scanID)
@@ -75,24 +76,24 @@ def connected(tag):
 
             #入退室に合わせて、音を鳴らす
             if(check):
-                res_audio("se_maoudamashii_chime13.wav")
                 #入室
-                print(scantime,check,scanID)
+                res_audio("se_maoudamashii_chime13.wav")
                 print("Enter")
             else:
-                res_audio("se_maoudamashii_chime13.wav")
                 #退室
-                print(scantime,check,scanID)
+                res_audio("se_maoudamashii_chime13.wav")
                 print("Exit")
+            print(scantime,check,scanID)
         except Exception as e:
                 print("error: %s" % e)
     else:
         print("error: tag isn't Type3Tag")
 
 
-
 if __name__ == "__main__":
+    print("program start")
     clf = nfc.ContactlessFrontend('usb:054c:06c3')
     while True:
         clf.connect(rdwr={'on-connect': connected})
         time.sleep(3)
+        print("Scantable")
