@@ -86,8 +86,10 @@ def connected(tag):
             print(scantime,check,scanID)
         except Exception as e:
                 print("error: %s" % e)
+                res_audio("se/se_maoudamashii_onepoint25.wav")
     else:
         print("error: tag isn't Type3Tag")
+        res_audio("se/se_maoudamashii_onepoint25.wav")
 
 
 if __name__ == "__main__":
