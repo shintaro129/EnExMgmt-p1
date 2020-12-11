@@ -19,6 +19,10 @@
 4.1~3までの工程が成功した際に、成功音を鳴らす
 
 
+## 記録用Googleスプレッドシート（ダウンロードしてご利用ください）
+[Googleスプレッドシート](https://docs.google.com/spreadsheets/d/1_2pXymswEs1JbpSYCkQ7J-i6-daQV1kEKH--eJBHpRM/edit?usp=sharing)
+
+
 ## 実行動画(OECUでのみ閲覧可能)
 https://drive.google.com/file/d/1lemHznOnEuZNssjBcwkmA8mJDhuieYN_/view?usp=sharing
 
