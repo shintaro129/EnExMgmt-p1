@@ -1,7 +1,15 @@
+function main(dict_eem) {
+  writing(dict_eem);
+  let mainText = changeText(dict_eem.info);
+  let title = dict_eem.date + "の入退室記録\n";
+  //sendSlack(title, mainText);
+  //sendMail(title, mainText);
+}
+
+
 function doPost(e) {
     let dict_eem = JSON.parse(e.postData.contents);
-    writing(dict_eem);
-
+    main(dict_eem);
     return ContentService.createTextOutput('success');
 }
 
