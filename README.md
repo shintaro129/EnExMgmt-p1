@@ -23,9 +23,8 @@
 [Googleスプレッドシート](https://docs.google.com/spreadsheets/d/1_2pXymswEs1JbpSYCkQ7J-i6-daQV1kEKH--eJBHpRM/edit?usp=sharing)
 
 
-## 実行動画(OECUでのみ閲覧可能)
-https://drive.google.com/file/d/1lemHznOnEuZNssjBcwkmA8mJDhuieYN_/view?usp=sharing
-
+## プレゼン動画(OECUでのみ閲覧可能)
+https://drive.google.com/file/d/1iLeQqFqhRwqwDHbqyT9RK_AQpUWrt29U/view?usp=sharing
 
 ## 参考にさせていただいたサイト
 ### 学籍番号の読み取り
@@ -41,4 +40,4 @@ https://drive.google.com/file/d/1lemHznOnEuZNssjBcwkmA8mJDhuieYN_/view?usp=shari
 
 
 ## 音楽
-[魔王魂](https://maoudamashii.jokersounds.com/)
+[くらげ工匠](http://www.kurage-kosho.info/index.html)
