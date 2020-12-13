@@ -34,6 +34,7 @@ git clone https://github.com/shintaro129/EnExMgmt-p1.git
 sudo apt install python3-pip
 pip3 install nfcpy
 pip3 install soundplay
+pip3 install requests
 ```
 
 ntpの設定
