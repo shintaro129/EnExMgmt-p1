@@ -28,10 +28,10 @@ https://drive.google.com/file/d/1iLeQqFqhRwqwDHbqyT9RK_AQpUWrt29U/view?usp=shari
  
 ## セットアップ【使い方】
 ### ラズパイの設定
-#想定OS
+#### 想定OS
 GUIが使えるもの(GASへのアクセスにアカウント認証が必要みたいです。)
  
-#環境セットアップ
+#### 環境セットアップ
 aptを最新版にしてください。(この時にGASの設定をするとスムーズかも)
  
 pythonの環境を構築します。
@@ -64,6 +64,8 @@ sudo nano /usr/bin/checkdate.sh
 /usr/sbin/ntpdate ntp.jst.mfeed.ad.jp
 sudo chmod 700 /usr/bin/checkdate.sh
 ```
+ 
+ 
 cron設定
 ```
 crontab -e
@@ -71,7 +73,7 @@ crontab -e
 ```
 45 23 * * * /which python3の絶対パス/python3 /絶対パス/send.py
 55 23 * * * sh /usr/bin/checkdate.sh
-56 23 * * * sudo /sbin/reboot
+@reboot /usr/bin/python3 /path/scan.py
 ```
  
 cronの起動と確認
@@ -94,8 +96,8 @@ sudo nano /etc/rc.local
 (その際、「`Execute the app as:`」を「`Me`」に、「`Who has access to the app:`」を「`anyone, even anonymous`」にしておく。)
  
 GASで取得したCurrent web app URLをラズパイ側に書き込んでください。
- 
-Main.gsのsendmail,sendslackのコメントアウトを外し、send.gsの該当部分の必要情報(mailなら送信先アドレス,slackならWebhook URL)を記述すると送られます。
+また、GASを利用するためにラズパイのブラウザでgoogleのアカウント認証をしてください。
+メールやSlackに入退室記録を送信したい場合はMain.gsのsendMail,sendSlackのコメントアウトを外し、send.gsの該当部分の必要情報(mailなら送信先アドレス,slackならWebhook URL)を記述してください。入退室記録がGASに送られてきた時にGSSへ記録後に送られます。
  
 ##### SlackのWebhook URLの取得
 Slackを開き「App」から「Incoming WebHooks」を追加。
@@ -132,3 +134,7 @@ python3 view_contactperson.py >> [記録したいファイル]
  
 ## 音楽
 [くらげ工匠](http://www.kurage-kosho.info/index.html)
+ 
+ 
+
+https://script.google.com/macros/s/AKfycbwkrc11zgv6FtmqEObU-79gj66N7C9eocKV0hJciFH0fG15EvB9/exec
