@@ -47,7 +47,7 @@ Pythonをクローンして、設置。
 git clone https://github.com/shintaro129/EnExMgmt-p1/AccessManagementSystem-raspi.git
 ```
  
-“privacy”フォルダ内のURLFILEにGoogleAppScripts(以下、GAS)で取得したfetchURLを記述する。
+`privacy`フォルダ内の`URLFILE`にGoogleAppScripts(以下、GAS)で取得したCurrent web app URLを記述する。
 (`https://script.google.com/macros/s/~~~/exec`のように「""」や「''」等の修飾文字は付けなくて結構です。)
  
 ntpの設定
@@ -97,7 +97,7 @@ GASで取得したCurrent web app URLをラズパイ側に書き込んでくだ�
  
 Main.gsのsendmail,sendslackのコメントアウトを外し、send.gsの該当部分の必要情報(mailなら送信先アドレス,slackならWebhook URL)を記述すると送られます。
  
-#### SlackのWebhook URLの取得
+##### SlackのWebhook URLの取得
 Slackを開き「App」から「Incoming WebHooks」を追加。
 「Slackに追加」をクリック。チャンネルを選択。
 「Incoming Webhookインテグレーションの追加」をクリック。
