@@ -75,7 +75,7 @@ sudo nano /etc/rc.local
 
 ### GASの設定
 1.	リンク先のGithubにある、`AccessManagementSystem-gas`内のスクリプトを記録する予定のGoogleSpreadSeatで開いたGoogleAppScriptsに設定する。(その際、「`Execute the app as:`」を「`Me`」に、「`Who has access to the app:`」を「`anyone, even anonymous`」にしておく。)
-2.	`AccessManagementSystem-raspi`を`Raspberry Pi`にクローンして`privacyフォルダ`の中の`URLFILE`へGoogleAppScriptsで取得したfetchURLを記述する。("https://script.google.com/macros/s/AKfycbzd3n8Pr0SvZnjHbZoV3HwK8xUc3lM7UdZjw9LqxBYnG4NoOw/exec"ってやつ。「""」や「''」等の修飾文字は付けなくて結構です。)
+2.	`AccessManagementSystem-raspi`を`Raspberry Pi`にクローンして`privacyフォルダ`の中の`URLFILE`へGoogleAppScriptsで取得したfetchURLを記述する。([https://script.google.com/macros/s/AKfycbzd3n8Pr0SvZnjHbZoV3HwK8xUc3lM7UdZjw9LqxBYnG4NoOw/exec](https://script.google.com/macros/s/AKfycbzd3n8Pr0SvZnjHbZoV3HwK8xUc3lM7UdZjw9LqxBYnG4NoOw/exec)ってやつ。「""」や「''」等の修飾文字は付けなくて結構です。)
 
 ## 参考にさせていただいたサイト
 ### 学籍番号の読み取り
