@@ -135,7 +135,3 @@ python3 view_contactperson.py >> [記録したいファイル]
  
 ## 音楽
 [くらげ工匠](http://www.kurage-kosho.info/index.html)
- 
- 
-
-https://script.google.com/macros/s/AKfycbwkrc11zgv6FtmqEObU-79gj66N7C9eocKV0hJciFH0fG15EvB9/exec
