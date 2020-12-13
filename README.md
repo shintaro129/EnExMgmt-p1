@@ -26,43 +26,47 @@
 ## プレゼン動画(OECUでのみ閲覧可能)
 https://drive.google.com/file/d/1iLeQqFqhRwqwDHbqyT9RK_AQpUWrt29U/view?usp=sharing
 
-## セットアップ
-## 【使い方】
-### ラズパイからすること
+## セットアップ【使い方】
+### ラズパイの設定
 Pythonをクローンして、設置。
 ```
 git clone https://github.com/shintaro129/EnExMgmt-p1.git
 sudo apt install python3-pip
-sudo pip3 install nfcpy
+pip3 install nfcpy
+pip3 install soundplay
 ```
-絶対パス変更点 :
+絶対パス変更点
+
 send.py  : /home/test/privacy/URLFILE
 
-ntpの設定。
+ntpの設定
 ```
 timedatectl set-timezone Asia/Tokyo
 sudo apt install ntpdate
 sudo ntpdate -u ntp.nict.jp
+
 sudo nano /usr/bin/checkdate.sh
 #!/bin/sh
 /usr/sbin/ntpdate ntp.jst.mfeed.ad.jp
+
 sudo chmod 700 /usr/bin/checkdate.sh
+
 crontab -e
 ```
-cron設定。
+cron設定
 ```
 45 23 * * * /which python3の絶対パス/python3 /絶対パス/send.py
 55 23 * * * sh /usr/bin/checkdate.sh
 56 23 * * * sudo /sbin/reboot
 ```
 
-cron起動。
+cron起動
 ```
 sudo systemctl start cron.service
 sudo systemctl enable cron.service
 sudo systemctl status cron.service
 ```
-再起動時、起動するファイルを指定。
+再起動時、起動するファイルを指定
 ```
 sudo chmod u+x /etc/rc.local
 sudo nano /etc/rc.local
@@ -70,8 +74,8 @@ sudo nano /etc/rc.local
 ```
 
 ### GASの設定
-1.	リンク先のGithubにある、"AccessManagementSystem-gas"内のスクリプトを記録する予定のGoogleSpreadSeatで開いたGoogleAppScriptsに設定する。(その際、「Execute the app as:」を「Me」に、「Who has access to the app:」を「anyone, even anonymous」にしておく。)
-2.	”AccessManagementSystem-raspi”をRaspberry Piにクローンして"privacyフォルダ"の中の”URLFILE”へGoogleAppScriptsで取得したfetchURLを記述する。("https://script.google.com/macros/s/AKfycbzd3n8Pr0SvZnjHbZoV3HwK8xUc3lM7UdZjw9LqxBYnG4NoOw/exec"ってやつ。「""」や「''」等の修飾文字は付けなくて結構です。)
+1.	リンク先のGithubにある、`AccessManagementSystem-gas`内のスクリプトを記録する予定のGoogleSpreadSeatで開いたGoogleAppScriptsに設定する。(その際、「`Execute the app as:`」を「`Me`」に、「`Who has access to the app:`」を「`anyone, even anonymous`」にしておく。)
+2.	`AccessManagementSystem-raspi`を`Raspberry Pi`にクローンして`privacyフォルダ`の中の`URLFILE`へGoogleAppScriptsで取得したfetchURLを記述する。("https://script.google.com/macros/s/AKfycbzd3n8Pr0SvZnjHbZoV3HwK8xUc3lM7UdZjw9LqxBYnG4NoOw/exec"ってやつ。「""」や「''」等の修飾文字は付けなくて結構です。)
 
 ## 参考にさせていただいたサイト
 ### 学籍番号の読み取り
