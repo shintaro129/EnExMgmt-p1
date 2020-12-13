@@ -100,7 +100,7 @@ GASで取得したCurrent web app URLをラズパイ側に書き込んでくだ�
  
 メールやSlackに入退室記録を送信したい場合はMain.gsのsendMail,sendSlackのコメントアウトを外し、send.gsの該当部分の必要情報(mailなら送信先アドレス,slackならWebhook URL)を記述してください。入退室記録がGASに送られてきた時にGSSへ記録後に送られます。
  
-##### SlackのWebhook URLの取得
+##### SlackのWebhook URLの取得について
 Slackを開き「App」から「Incoming WebHooks」を追加。
 「Slackに追加」をクリック。チャンネルを選択。
 「Incoming Webhookインテグレーションの追加」をクリック。
