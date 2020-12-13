@@ -44,7 +44,7 @@ pip3 install requests
  
 Pythonをクローンして、設置。
 ```
-git clone https://github.com/shintaro129/EnExMgmt-p1.git
+git clone https://github.com/shintaro129/EnExMgmt-p1/AccessManagementSystem-raspi.git
 ```
  
 “privacy”フォルダ内のURLFILEにGoogleAppScripts(以下、GAS)で取得したfetchURLを記述する。
@@ -95,7 +95,26 @@ sudo nano /etc/rc.local
  
 GASで取得したCurrent web app URLをラズパイ側に書き込んでください。
  
-Main.gsのsendmail,sendslackのコメントアウトを外し、
+Main.gsのsendmail,sendslackのコメントアウトを外し、send.gsの該当部分の必要情報(mailなら送信先アドレス,slackならWebhook URL)を記述すると送られます。
+ 
+#### SlackのWebhook URLの取得
+Slackを開き「App」から「Incoming WebHooks」を追加。
+「Slackに追加」をクリック。チャンネルを選択。
+「Incoming Webhookインテグレーションの追加」をクリック。
+Webhook URLが表示される。
+ 
+参考サイト：
+[GAS超入門⑤ - Slackに通知してみよう](https://note.com/skipla/n/na3f7f9cd9b7d)
+ 
+ 
+### 列挙ツールの使いかた
+python3環境に`requests`をインストールする。
+`AccessManagementSystem-contact`内の`view_contactperson.py` をダウンロードして、設置したフォルダで、
+```
+python3 view_contactperson.py >> [記録したいファイル]
+```
+を実行する。
+記録したいファイルに接触した可能性がある人が列挙されます。
  
  
 ## 参考にさせていただいたサイト
@@ -113,6 +132,3 @@ Main.gsのsendmail,sendslackのコメントアウトを外し、
  
 ## 音楽
 [くらげ工匠](http://www.kurage-kosho.info/index.html)
- 
- 
-
