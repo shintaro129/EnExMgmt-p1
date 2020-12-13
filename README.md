@@ -35,9 +35,6 @@ sudo apt install python3-pip
 pip3 install nfcpy
 pip3 install soundplay
 ```
-絶対パス変更点
-
-send.py  : /home/test/privacy/URLFILE
 
 ntpの設定
 ```
