@@ -20,7 +20,7 @@
  
  
 ## 記録用Googleスプレッドシート（ダウンロードしてご利用ください）
-[Googleスプレッドシート](https://docs.google.com/spreadsheets/d/1_2pXymswEs1JbpSYCkQ7J-i6-daQV1kEKH--eJBHpRM/edit?usp=sharing)
+[Googleスプレッドシート](https://docs.google.com/spreadsheets/d/1bU7MB-2ilCXyXzAKiwMG6wuOpP0hoI-oNDFW0h_naJw/edit?usp=sharing)
  
  
 ## プレゼン動画(OECUでのみ閲覧可能)
@@ -32,7 +32,7 @@ https://drive.google.com/file/d/1iLeQqFqhRwqwDHbqyT9RK_AQpUWrt29U/view?usp=shari
 GUIが使えるもの(GASへのアクセスにアカウント認証が必要みたいです。)
  
 #環境セットアップ
-aptを最新版にしてください。
+aptを最新版にしてください。(この時にGASの設定をするとスムーズかも)
  
 pythonの環境を構築します。
 ```
@@ -48,8 +48,7 @@ git clone https://github.com/shintaro129/EnExMgmt-p1.git
 ```
  
 “privacy”フォルダ内のURLFILEにGoogleAppScripts(以下、GAS)で取得したfetchURLを記述する。
-`https://script.google.com/macros/s/~~~/exec`のように「""」や「''」等の修飾文字は付けなくて結構です。)
-
+(`https://script.google.com/macros/s/~~~/exec`のように「""」や「''」等の修飾文字は付けなくて結構です。)
  
 ntpの設定
 ```
@@ -64,7 +63,7 @@ sudo nano /usr/bin/checkdate.sh
 #!/bin/sh
 /usr/sbin/ntpdate ntp.jst.mfeed.ad.jp
 sudo chmod 700 /usr/bin/checkdate.sh
- 
+```
 cron設定
 ```
 crontab -e
@@ -90,8 +89,14 @@ sudo nano /etc/rc.local
 ```
  
 ### GASの設定
-1.	リンク先のGithubにある、`AccessManagementSystem-gas`内のスクリプトを記録する予定のGoogleSpreadSeatで開いたGoogleAppScriptsに設定する。(その際、「`Execute the app as:`」を「`Me`」に、「`Who has access to the app:`」を「`anyone, even anonymous`」にしておく。)
-2.	`AccessManagementSystem-raspi`を`Raspberry Pi`にクローンして`privacyフォルダ`の中の`URLFILE`へGoogleAppScriptsで取得したfetchURLを記述する。([https://script.google.com/macros/s/AKfycbzd3n8Pr0SvZnjHbZoV3HwK8xUc3lM7UdZjw9LqxBYnG4NoOw/exec](https://script.google.com/macros/s/AKfycbzd3n8Pr0SvZnjHbZoV3HwK8xUc3lM7UdZjw9LqxBYnG4NoOw/exec)ってやつ。「""」や「''」等の修飾文字は付けなくて結構です。)
+ 
+「ウェブアプリケーションとして導入」から「`Project version:`」をNewにする。
+(その際、「`Execute the app as:`」を「`Me`」に、「`Who has access to the app:`」を「`anyone, even anonymous`」にしておく。)
+ 
+GASで取得したCurrent web app URLをラズパイ側に書き込んでください。
+ 
+Main.gsのsendmail,sendslackのコメントアウトを外し、
+ 
  
 ## 参考にさせていただいたサイト
 ### 学籍番号の読み取り
@@ -108,3 +113,6 @@ sudo nano /etc/rc.local
  
 ## 音楽
 [くらげ工匠](http://www.kurage-kosho.info/index.html)
+ 
+ 
+
