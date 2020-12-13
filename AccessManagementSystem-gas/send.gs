@@ -15,7 +15,7 @@ function changeText(todayData){
 
 //指定のメールアドレスへのデータ送信
 function sendMail(title, text) {
-  const recipient = 'GP20A129@oecu.jp';
+  const recipient = '//送信先メールアドレス';
   const recipientName = '入退室管理app'; 
   const subject = title;
   
@@ -25,7 +25,7 @@ function sendMail(title, text) {
 
 //Slackへのデータ送信
 function sendSlack(title, text){
-  const webHookUrl = "https://hooks.slack.com/services/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";
+  const webHookUrl = "//webhookURL";
   
   let payload = JSON.stringify({
     "text": title + text
